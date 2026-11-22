@@ -1732,7 +1732,7 @@ ${QA_ITEMS.map((q,i)=>`  ${String(i+1).padStart(2,'0')}. ${q[0]}: ${q[1]}`).join
   const rescue=STAGES.find(s=>s.tab==='↺ 디자인 살리기');
   const oldRescue=rescue.build;
   rescue.build=c=>oldRescue(c).replace('\n</done_when>','\n- A/B/C 시안은 6축 쌍별 차이가 설정한 차별화 기준에 맞는다\n</done_when>');
-  STAGES.splice(STAGES.length-1,0,{
+  STAGES.push({
     tab:'⑩ A/B 비교',title:'⑩ 기존 vs 강화 버전 실전 비교 (선택)',file:'output/10_ab_review.md',
     hint:'같은 입력·동일한 모델·같은 슬라이드 수로 만든 원본과 개선본을 실제 렌더로 비교합니다.',
     build:c=>stage(c,'⑩ A/B 비교',
